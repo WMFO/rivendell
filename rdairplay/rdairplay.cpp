@@ -441,7 +441,7 @@ MainWidget::MainWidget(QWidget *parent)
   connect(rda->ripc(),SIGNAL(onairFlagChanged(bool)),
 	  air_pie_counter,SLOT(setOnairFlag(bool)));
 
-  connect(rdripc,SIGNAL(onairFlagChanged(bool)),
+  connect(rda->ripc(),SIGNAL(onairFlagChanged(bool)),
       this,SLOT(lockAutomatic(bool)));
   autoLock = false;
   //
