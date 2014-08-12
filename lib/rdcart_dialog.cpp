@@ -235,7 +235,7 @@ RDCartDialog::RDCartDialog(QString *filter,QString *group,QString *schedcode,
   cart_cart_list->addColumn(tr("AGENCY"));
   cart_cart_list->setColumnAlignment(9,Qt::AlignLeft);
 
-  cart_cart_list->addColumn(tr("USER DEF"));
+  cart_cart_list->addColumn(tr("ALBUM"));
   cart_cart_list->setColumnAlignment(10,Qt::AlignLeft);
 
   cart_cart_list->addColumn(tr("START"));
@@ -731,7 +731,7 @@ void RDCartDialog::RefreshCarts()
   }
   if(cart_type==RDCart::All) {
     sql=QString().sprintf("select CART.NUMBER,CART.TITLE,CART.ARTIST,\
-                           CART.CLIENT,CART.AGENCY,CART.USER_DEFINED,\
+                           CART.CLIENT,CART.AGENCY,CART.ALBUM,\
                            CART.COMPOSER,CART.CONDUCTOR,\
                            CART.START_DATETIME,CART.END_DATETIME,CART.TYPE,\
                            CART.FORCED_LENGTH,CART.GROUP_NAME,GROUPS.COLOR \
@@ -742,7 +742,7 @@ void RDCartDialog::RefreshCarts()
   }
   else {
     sql=QString().sprintf("select CART.NUMBER,CART.TITLE,CART.ARTIST,\
-                           CART.CLIENT,CART.AGENCY,CART.USER_DEFINED,\
+                           CART.CLIENT,CART.AGENCY,CART.ALBUM,\
                            CART.COMPOSER,CART.CONDUCTOR,\
                            CART.START_DATETIME,CART.END_DATETIME,CART.TYPE,\
                            CART.FORCED_LENGTH,CART.GROUP_NAME,GROUPS.COLOR \
