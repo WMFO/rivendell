@@ -129,6 +129,7 @@ class MainWidget : public QWidget
   void keyReleaseEvent(QKeyEvent *e);
   void closeEvent(QCloseEvent *);
   void paintEvent(QPaintEvent *e);
+  void lockAutomatic(bool lockState);
   
  private:
   void RunLocalMacros(RDMacro *rml);
@@ -220,6 +221,7 @@ class MainWidget : public QWidget
   std::map<unsigned,QTimer *> air_channel_timers[2];
   RDEmptyCart *air_empty_cart;
   RDCae *air_cae;
+  bool autoLock;
 };
 
 

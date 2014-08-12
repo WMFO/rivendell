@@ -441,6 +441,9 @@ MainWidget::MainWidget(QWidget *parent)
   connect(rda->ripc(),SIGNAL(onairFlagChanged(bool)),
 	  air_pie_counter,SLOT(setOnairFlag(bool)));
 
+  connect(rdripc,SIGNAL(onairFlagChanged(bool)),
+      this,SLOT(lockAutomatic(bool)));
+  autoLock = false;
   //
   // Audio Meter
   //
@@ -800,28 +803,7 @@ MainWidget::MainWidget(QWidget *parent)
   // Set Startup Mode
   //
   for(int i=0;i<RDAIRPLAY_LOG_QUANTITY;i++) {
-    switch(rda->airplayConf()->logStartMode(i)) {
-      case RDAirPlayConf::Manual:
-	SetManualMode(i);
-	break;
-	
-      case RDAirPlayConf::LiveAssist:
-	SetLiveAssistMode(i);
-	break;
-	
-      case RDAirPlayConf::Auto:
 	SetAutoMode(i);
-	break;
-	
-      case RDAirPlayConf::Previous:
-	if(air_op_mode_style==RDAirPlayConf::Unified) {
-	  SetMode(i,rda->airplayConf()->opMode(0));
-	}
-	else {
-	  SetMode(i,rda->airplayConf()->opMode(i));
-	}
-	break;
-    }
   }
 
   //
@@ -1529,7 +1511,7 @@ void MainWidget::modeButtonData()
   }
   switch(air_op_mode[0]) {
       case RDAirPlayConf::Manual:
-	SetMode(mach,RDAirPlayConf::LiveAssist);
+	SetMode(mach,RDAirPlayConf::Auto);
 	break;
 
       case RDAirPlayConf::LiveAssist:
@@ -1544,7 +1526,6 @@ void MainWidget::modeButtonData()
 	break;
   }
 }
-
 
 void MainWidget::selectClickedData(int id,int line,RDLogLine::Status status)
 {
@@ -2210,8 +2191,14 @@ void MainWidget::SetMode(int mach,RDAirPlayConf::OpMode mode)
 }
 
 
+void MainWidget::lockAutomatic(bool lockState){
+  autoLock = !lockState;
+}
+
+
 void MainWidget::SetManualMode(int mach)
 {
+if (! autoLock){
   if(mach<0) {
     for(int i=0;i<RDAIRPLAY_LOG_QUANTITY;i++) {
       SetManualMode(i);
@@ -2232,6 +2219,7 @@ void MainWidget::SetManualMode(int mach)
   }
   LogLine(RDConfig::LogInfo,
 	  QString().sprintf("log machine %d mode set to MANUAL",mach+1));
+}
 }
 
 
@@ -2262,26 +2250,8 @@ void MainWidget::SetAutoMode(int mach)
 
 void MainWidget::SetLiveAssistMode(int mach)
 {
-  if(mach<0) {
-    for(int i=0;i<RDAIRPLAY_LOG_QUANTITY;i++) {
-      SetLiveAssistMode(i);
-    }
-    return;
-  }
-  if(mach==0) {
-    air_pie_counter->setOpMode(RDAirPlayConf::LiveAssist);
-  }
-  air_mode_display->setOpMode(mach,RDAirPlayConf::LiveAssist);
-  air_op_mode[mach]=RDAirPlayConf::LiveAssist;
-  rda->airplayConf()->setOpMode(mach,RDAirPlayConf::LiveAssist);
-  air_log[mach]->setOpMode(RDAirPlayConf::LiveAssist);
-  air_log_list[mach]->setOpMode(RDAirPlayConf::LiveAssist);
-  if(mach==0) {
-    air_button_list->setOpMode(RDAirPlayConf::LiveAssist); 
-    air_post_counter->setDisabled(true);
-  }
   LogLine(RDConfig::LogInfo,
-	  QString().sprintf("log machine %d mode set to LIVE ASSIST",mach+1));
+      QString().sprintf("log machine %d IGNORED mode set to LiveAssist",mach+1));
 }
 
 

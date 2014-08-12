@@ -104,8 +104,8 @@ void ModeDisplay::WriteMap()
       p->setPen(QColor(Qt::color1));
       p->setFont(mode_small_font);
       p->drawText((sizeHint().width()-p->fontMetrics().
-		   width(tr("Operating Mode")))/2,
-		  22,tr("Operating Mode"));
+		   width(tr("Playback Mode")))/2,
+		  22,tr("Playback Mode"));
       p->setFont(mode_large_font);
       p->drawText((sizeHint().width()-p->fontMetrics().width(tr("LiveAssist")))/2,
 		  48,tr("LiveAssist"));
@@ -118,11 +118,11 @@ void ModeDisplay::WriteMap()
       p->setPen(QColor(Qt::color1));
       p->setFont(mode_small_font);
       p->drawText((sizeHint().width()-p->fontMetrics().
-		   width(tr("Operating Mode")))/2,
-		  22,tr("Operating Mode"));
+		   width(tr("Playback Mode")))/2,
+		  22,tr("Playback Mode"));
       p->setFont(mode_large_font);
-      p->drawText((sizeHint().width()-p->fontMetrics().width(tr("Automatic")))/2,
-		  48,tr("Automatic"));
+      p->drawText((sizeHint().width()-p->fontMetrics().width(tr("Continuous")))/2,
+		  48,tr("Continuous"));
       setPalette(auto_color);
       break;
 
@@ -132,11 +132,11 @@ void ModeDisplay::WriteMap()
       p->setPen(QColor(Qt::color1));
       p->setFont(mode_small_font);
       p->drawText((sizeHint().width()-p->fontMetrics().
-		   width(tr("Operating Mode")))/2,
-		  22,tr("Operating Mode"));
+		   width(tr("Playback Mode")))/2,
+		  22,tr("Playback Mode"));
       p->setFont(mode_large_font);
-      p->drawText((sizeHint().width()-p->fontMetrics().width(tr("Manual")))/2,
-		  48,tr("Manual"));
+      p->drawText((sizeHint().width()-p->fontMetrics().width(tr("Single")))/2,
+		  48,tr("Single"));
       setPalette(manual_color);
       break;
 
@@ -152,8 +152,8 @@ void ModeDisplay::WriteMap()
       p->setPen(QColor(Qt::color1));
       p->setFont(mode_small_font);
       p->drawText((sizeHint().width()-p->fontMetrics().
-		   width(tr("Operating Mode")))/2,
-		  12,tr("Operating Mode"));
+		   width(tr("Playback Mode")))/2,
+		  12,tr("Playback Mode"));
       p->setFont(mode_large_font);
       p->drawText((sizeHint().width()-p->fontMetrics().width(tr("LiveAssist")))/2,
 		  38,tr("LiveAssist"));
@@ -166,11 +166,11 @@ void ModeDisplay::WriteMap()
       p->setPen(QColor(Qt::color1));
       p->setFont(mode_small_font);
       p->drawText((sizeHint().width()-p->fontMetrics().
-		   width(tr("Operating Mode")))/2,
-		  12,tr("Operating Mode"));
+		   width(tr("Playback Mode")))/2,
+		  12,tr("Playback Mode"));
       p->setFont(mode_large_font);
-      p->drawText((sizeHint().width()-p->fontMetrics().width(tr("Automatic")))/2,
-		  39,tr("Automatic"));
+      p->drawText((sizeHint().width()-p->fontMetrics().width(tr("Continuous")))/2,
+		  39,tr("Continuous"));
       setPalette(auto_color);
       break;
 
@@ -180,11 +180,11 @@ void ModeDisplay::WriteMap()
       p->setPen(QColor(Qt::color1));
       p->setFont(mode_small_font);
       p->drawText((sizeHint().width()-p->fontMetrics().
-		   width(tr("Operating Mode")))/2,
-		  12,tr("Operating Mode"));
+		   width(tr("Playback Mode")))/2,
+		  12,tr("Playback Mode"));
       p->setFont(mode_large_font);
-      p->drawText((sizeHint().width()-p->fontMetrics().width(tr("Manual")))/2,
-		  38,tr("Manual"));
+      p->drawText((sizeHint().width()-p->fontMetrics().width(tr("Single")))/2,
+		  38,tr("Single"));
       setPalette(manual_color);
       break;
 
