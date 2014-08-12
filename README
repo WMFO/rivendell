@@ -1,3 +1,14 @@
+README for WMFO's fork of Rivendell
+
+WMFO applies custom patches to Rivendell. You can find more information about
+these patches in the commits on the wmfo-patches branch. We are successfully
+using this branch in production. You can find out more about WMFO's Rivendell
+setup in some of our other repos, as well as on our wiki:
+https://wiki.wmfo.org/Operations/Rivendell We are also happy to answer questions
+at: wmfo-ops@googlegroups.com
+
+--------------------------
+
 This is the README file for the Rivendell package.
 
 This software comes with ABSOLUTELY NO WARRANTY.  See the file COPYING for
