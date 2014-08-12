@@ -229,7 +229,7 @@ RDCartDialog::RDCartDialog(QString *filter,QString *group,QString *schedcode,
   cart_cart_list->addColumn(tr("AGENCY"));
   cart_cart_list->setColumnAlignment(9,Qt::AlignLeft);
 
-  cart_cart_list->addColumn(tr("USER DEF"));
+  cart_cart_list->addColumn(tr("ALBUM"));
   cart_cart_list->setColumnAlignment(10,Qt::AlignLeft);
 
   cart_cart_list->addColumn(tr("START"));
@@ -740,7 +740,7 @@ void RDCartDialog::RefreshCarts()
       "CART.ARTIST,"+          // 02
       "CART.CLIENT,"+          // 03
       "CART.AGENCY,"+          // 04
-      "CART.USER_DEFINED,"+    // 05
+      "CART.ALBUM,"+           // 05
       "CART.COMPOSER,"+        // 06
       "CART.CONDUCTOR,"+       // 07
       "CART.START_DATETIME,"+  // 08
@@ -760,7 +760,7 @@ void RDCartDialog::RefreshCarts()
       "CART.ARTIST,"+          // 02
       "CART.CLIENT,"+          // 03
       "CART.AGENCY,"+          // 04
-      "CART.USER_DEFINED,"+    // 05
+      "CART.ALBUM,"+           // 05
       "CART.COMPOSER,"+        // 06
       "CART.CONDUCTOR,"+       // 07
       "CART.START_DATETIME,"+  // 08
