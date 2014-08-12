@@ -509,6 +509,8 @@ void RDCutDialog::RefreshCarts()
   }
   if(cart_limit_box->isChecked()) {
     sql+=QString().sprintf(" limit %d",RD_LIMITED_CART_SEARCH_QUANTITY);
+  }else if(RD_UNLIMITED_CART_SEARCH_QUANTITY != -1){
+    sql+=QString().sprintf(" limit %d",RD_UNLIMITED_CART_SEARCH_QUANTITY);
   }
   q=new RDSqlQuery(sql);
   int step=0;

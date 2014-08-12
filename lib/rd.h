@@ -491,6 +491,12 @@
 #define RD_LIMITED_CART_SEARCH_QUANTITY 100
 
 /*
+* Number of Carts to Include in an 'Unlimited' Search
+* -1 To Disable Limit
+*/
+#define RD_UNLIMITED_CART_SEARCH_QUANTITY 1000
+
+/*
  * Default title for a new cart
  */
 #define RD_DEFAULT_CART_TITLE "[new cart]"
