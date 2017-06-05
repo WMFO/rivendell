@@ -429,6 +429,7 @@ void RDPanelButton::WriteKeycap(int secs)
     p->fillRect(0,0,size().width(),size().height(),button_color);
     p->setPen(RDGetTextColor(button_color));
   }
+  p->drawRect(0,0,size().width(),size().height());
 
   //
   // Button Title
